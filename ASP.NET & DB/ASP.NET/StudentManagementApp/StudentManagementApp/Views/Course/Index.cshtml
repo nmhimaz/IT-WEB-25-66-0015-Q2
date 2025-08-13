@@ -1,0 +1,29 @@
+﻿@model IEnumerable<StudentManagementApp.Models.Course>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Courses</title>
+</head>
+<body>
+    <h2>Courses</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Course Name</th>
+                <th>Lecturer Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var course in Model)
+            {
+                <tr>
+                    <td>@course.Name</td>
+                    <td>@course.LecturerName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Course/Create">Add Course</a>
+</body>
+</html>

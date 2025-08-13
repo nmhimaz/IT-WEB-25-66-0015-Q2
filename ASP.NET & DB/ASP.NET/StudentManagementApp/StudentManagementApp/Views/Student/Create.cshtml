@@ -1,0 +1,28 @@
+﻿@model StudentManagementApp.Models.Student
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student</title>
+</head>
+<body>
+    <h2>Add New Student</h2>
+    <form method="post" action="/Student/Create">
+        <label>Name:</label>
+        <input type="text" name="Name" required /><br />
+
+        <label>City:</label>
+        <input type="text" name="City" required /><br />
+
+        <label>Course:</label>
+        <select name="CourseID" required>
+            @foreach (var course in ViewBag.Courses)
+            {
+                <option value="@course.CourseID">@course.Name</option>
+            }
+        </select><br />
+
+        <button type="submit">Add Student</button>
+    </form>
+</body>
+</html>

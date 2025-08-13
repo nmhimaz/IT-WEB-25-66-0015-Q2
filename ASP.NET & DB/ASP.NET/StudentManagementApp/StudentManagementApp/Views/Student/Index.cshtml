@@ -1,0 +1,30 @@
+﻿@model IEnumerable<StudentManagementApp.Models.Student>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Students</title>
+</head>
+<body>
+    <h2>Students</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Course</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.Name</td>
+                    <td>@student.City</td>
+                    <td>@student.Course?.Name</td>  <!-- Safely accessing the Course Name -->
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
